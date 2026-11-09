@@ -7,7 +7,8 @@ function lensPath([x,h,w,a,b]) {
 function diagram(item, hero=false) {
   if(item.kind==='product') {
     const hasConstruction=Number.isInteger(item.elements)&&Number.isInteger(item.groups);
-    return `<svg class="optics-svg spec-svg" viewBox="0 0 360 240" role="img" aria-label="${escapeHTML(item.name)}の公表仕様。内部配置図ではありません。"><path class="axis" d="M 25 120 H 335"/><circle cx="180" cy="118" r="74" fill="none" stroke="#bcc8bf" stroke-width=".7"/><circle cx="180" cy="118" r="82" fill="none" stroke="#cbd4ca" stroke-width=".5"/><rect x="49" y="83" width="262" height="76" fill="#e9edf0"/><text class="spec-value" x="180" y="116" text-anchor="middle">${item.focal} · ${item.aperture}</text><text class="spec-caption" x="180" y="145" text-anchor="middle">${hasConstruction?`${item.groups} GROUPS / ${item.elements} ELEMENTS`:'HISTORICAL MODEL'}</text><text class="label" x="19" y="220">PUBLISHED SPECIFICATIONS</text><text class="label" x="341" y="220" text-anchor="end">LEICA / LEITZ</text></svg>`;
+    const maker=item.brand==='nikon'?'NIKON / NIKKOR':item.brand==='takahashi'?'TAKAHASHI':BRANDS[item.brand]||'';
+    return `<svg class="optics-svg spec-svg" viewBox="0 0 360 240" role="img" aria-label="${escapeHTML(item.name)}の公表仕様。内部配置図ではありません。"><path class="axis" d="M 25 120 H 335"/><circle cx="180" cy="118" r="74" fill="none" stroke="#bcc8bf" stroke-width=".7"/><circle cx="180" cy="118" r="82" fill="none" stroke="#cbd4ca" stroke-width=".5"/><rect x="29" y="83" width="302" height="76" fill="#e9edf0"/><text class="spec-value" x="180" y="116" text-anchor="middle">${escapeHTML(item.focal)} · ${escapeHTML(item.aperture)}</text><text class="spec-caption" x="180" y="145" text-anchor="middle">${escapeHTML(item.specCaption||(hasConstruction?`${item.groups} GROUPS / ${item.elements} ELEMENTS`:'HISTORICAL MODEL'))}</text>${item.diameter?`<text class="spec-caption spec-diameter" x="180" y="177" text-anchor="middle">CLEAR APERTURE Ø ${escapeHTML(item.diameter)}</text>`:''}<text class="label" x="19" y="220">PUBLISHED SPECIFICATIONS</text><text class="label" x="341" y="220" text-anchor="end">${escapeHTML(maker)}</text></svg>`;
   }
   const axis = '<path class="axis" d="M 18 120 H 342"/>';
   let elements='', rays='';
@@ -57,7 +58,7 @@ function render() {
     const haystack=normalize([o.name,o.en,...(o.aliases||[]),...(BRAND_ALIASES[o.brand]||[]),o.tag,o.description,o.meta,CATEGORIES[o.category],BRANDS[o.brand||'general']].join(' '));
     return (category==='all'||o.category===category)&&(brand==='all'||(o.brand||'general')===brand)&&searchTerms.every(term=>haystack.includes(term));
   });
-  $('gallery').innerHTML=items.map(o=>`<button class="card" data-id="${o.id}" data-category="${o.category}" aria-label="${escapeHTML(o.name)}の詳細を見る"><div class="card-art"><span class="card-number">${String(OPTICS.indexOf(o)+1).padStart(2,'0')} · ${o.kind==='product'?'実製品':'方式'}</span><span class="card-category">${o.brand?BRANDS[o.brand]:CATEGORIES[o.category]}</span>${diagram(o)}</div><div class="card-body"><p class="card-en">${escapeHTML(o.en)}</p><h3>${o.name}</h3><p class="card-description">${o.description}</p><div class="card-bottom"><span>${o.meta}</span><span class="card-arrow" aria-hidden="true">↗</span></div></div></button>`).join('');
+  $('gallery').innerHTML=items.map(o=>`<button class="card" data-id="${o.id}" data-category="${o.category}" data-brand="${o.brand||'general'}" aria-label="${escapeHTML(o.name)}の詳細を見る"><div class="card-art"><span class="card-number">${String(OPTICS.indexOf(o)+1).padStart(2,'0')} · ${o.kind==='product'?'実製品':'方式'}</span><span class="card-category">${o.brand?BRANDS[o.brand]:CATEGORIES[o.category]}</span>${diagram(o)}</div><div class="card-body"><p class="card-en">${escapeHTML(o.en)}</p><h3>${o.name}</h3><p class="card-description">${o.description}</p><div class="card-bottom"><span>${o.meta}</span><span class="card-arrow" aria-hidden="true">↗</span></div></div></button>`).join('');
   $('result-count').textContent=`${String(items.length).padStart(2,'0')} ITEMS / ${CATEGORIES[category]||'すべての光学系'}${brand!=='all'?` / ${BRANDS[brand]}`:''}`;
   $('empty').hidden=items.length>0;
   document.querySelectorAll('.filter').forEach(b=>{const active=b.dataset.category===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));b.querySelector('span').textContent=OPTICS.filter(o=>b.dataset.category==='all'||o.category===b.dataset.category).length;});
@@ -65,8 +66,12 @@ function render() {
 function openDetail(id) {
   const o=OPTICS.find(o=>o.id===id); if(!o)return;
   const source=SOURCES[o.source];
+  const related=(o.related||[]).map(id=>OPTICS.find(item=>item.id===id)).filter(Boolean);
   $('detail-content').innerHTML=`<p class="eyebrow">${CATEGORIES[o.category]} / ${o.kind==='product'?'実製品の公表仕様':'方式・設計例'}${o.brand?` / ${BRANDS[o.brand]}`:''}</p><h2 id="detail-title" class="detail-title">${o.name}</h2><p class="detail-en">${escapeHTML(o.en)}</p><div class="detail-art">${diagram(o)}</div><div class="detail-tags"><span>${o.meta}</span><span>${o.tag}</span></div><p class="detail-description">${o.detail}</p><p class="detail-notice">${o.kind==='product'?'このカードは特定モデルの公表仕様を表示しています。内部構成図や性能資料は下記の資料を参照してください。':'図は代表構成の模式例です。曲率・間隔・光路は数値計算や実機の処方に基づいていません。'}</p><a class="source-link" href="${source[1]}" target="_blank" rel="noopener noreferrer">参考資料：${source[0]} ↗</a>`;
-  dialog.showModal();
+  if(related.length)$('detail-content').innerHTML+=`<nav class="related-optics" aria-label="関連する光学系"><p class="eyebrow">あわせて巡る</p>${related.map(item=>`<button type="button" data-optic-id="${item.id}">${escapeHTML(item.name)} <span aria-hidden="true">→</span></button>`).join('')}</nav>`;
+  if(!dialog.open)dialog.showModal();
+  dialog.scrollTop=0;
+  $('close-detail').focus({preventScroll:true});
   history.replaceState(null,'',`#system=${o.id}`);
 }
 function closeDetail(){dialog.close();history.replaceState(null,'','#collection');}
@@ -77,6 +82,17 @@ $('brand-filter').innerHTML+=Object.entries(BRANDS).map(([key,label])=>`<option 
 $('brand-filter').addEventListener('change',e=>{brand=e.target.value;render();});
 $('show-rays').addEventListener('change',e=>document.body.classList.toggle('hide-rays',!e.target.checked));
 $('gallery').addEventListener('click',e=>{const card=e.target.closest('[data-id]');if(card)openDetail(card.dataset.id);});
+document.addEventListener('click',e=>{
+  const detailLink=e.target.closest('[data-optic-id]');
+  if(detailLink)openDetail(detailLink.dataset.opticId);
+  const brandLink=e.target.closest('[data-browse-brand]');
+  if(brandLink){
+    category='all';brand=brandLink.dataset.browseBrand;query='';
+    $('search').value='';$('brand-filter').value=brand;render();
+    $('collection').scrollIntoView({block:'start'});
+    $('brand-filter').focus({preventScroll:true});
+  }
+});
 $('close-detail').addEventListener('click',closeDetail);
 dialog.addEventListener('cancel',e=>{e.preventDefault();closeDetail();});
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDetail();}});

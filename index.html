@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ライカ、ツァイス、対物レンズ、アイピース、反射・屈折反射望遠鏡。46の光学方式と代表モデルを、模式図と公表資料で巡るギャラリー。">
+  <meta name="description" content="ニコン、タカハシ、ライカ、ツァイス。NIKKORの設計史からε-130・MT-130まで、62の光学方式と実製品を模式図と公式資料で巡るギャラリー。">
   <meta name="theme-color" content="#f4f3ed">
   <title>光学系のギャラリー — Optical Atlas</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=20261106-atlas46">
-  <script src="./data.js?v=20261106-atlas46" defer></script>
-  <script src="./catalog.js?v=20261106-atlas46" defer></script>
-  <script src="./app.js?v=20261106-atlas46" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=20261109-atlas62">
+  <script src="./data.js?v=20261109-atlas62" defer></script>
+  <script src="./catalog.js?v=20261109-atlas62" defer></script>
+  <script src="./app.js?v=20261109-atlas62" defer></script>
 </head>
 <body>
   <header class="site-header wrap">
     <a class="brand" href="./" aria-label="Optical Atlas ホーム"><span class="brand-mark" aria-hidden="true">◉</span> OPTICAL ATLAS<span class="brand-ja">光学系のギャラリー</span></a>
-    <a class="header-link" href="#about">この図鑑について <span aria-hidden="true">↗</span></a>
+    <nav class="header-nav" aria-label="ページ内メニュー"><a class="header-link" href="#japanese-optics">NIKKORとタカハシ</a><a class="header-link" href="#about">この図鑑について <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="tiny-dot"></span> A FIELD GUIDE TO OPTICAL SYSTEMS</p>
         <h1 id="hero-title">光を曲げる。<br>世界が、見えてくる。</h1>
-        <p class="hero-description">小さなアイピースから、ライカ、ツァイス、星を集める望遠鏡まで。<br>46の光学方式と代表モデルを、かたちと資料から巡る光学図鑑。</p>
+        <p class="hero-description">ニッコール、ライカ、ツァイスから、タカハシの星を集める鏡筒まで。<br>62の光学方式と代表モデルを、かたちと資料から巡る光学図鑑。</p>
         <a href="#collection" class="explore-link">コレクションを見る <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="hero-figure">
@@ -31,15 +31,36 @@
         <figcaption><span>ダブルガウス型</span><span>対称性から生まれる、結像のかたち。</span></figcaption>
       </figure>
     </section>
+    <section id="japanese-optics" class="spotlight wrap" aria-labelledby="spotlight-title">
+      <div class="section-heading spotlight-heading"><div><p class="eyebrow"><span class="tiny-dot"></span> FOCUS ON JAPANESE OPTICS</p><h2 id="spotlight-title">ニッコールと、タカハシと。</h2><p class="spotlight-intro">夜の灯りも、遠い星も。写したいものから、光学の工夫を辿る。</p></div><div class="brand-shortcuts"><button type="button" data-browse-brand="nikon">NIKKOR 10本を見る <span aria-hidden="true">↗</span></button><button type="button" data-browse-brand="takahashi">タカハシ 6機種を見る <span aria-hidden="true">↗</span></button></div></div>
+      <div class="spotlight-grid">
+        <article class="optical-story story-noct">
+          <p class="story-kicker">01 / NIKKOR · NOCT</p><div class="story-number" aria-hidden="true">58<span>mm</span><i>f/1.2 → f/0.95</i></div>
+          <h3>夜の点を、点に近づける。</h3><p class="story-copy">開放の点光源を翼のように広げる、サジタルコマフレア。研削非球面で挑んだAi Noctから、10群17枚のZ Noctへ。</p>
+          <div class="story-links"><button type="button" data-optic-id="nikon-noct-58">Ai Noct 58mm f/1.2 <span aria-hidden="true">↗</span></button><button type="button" data-optic-id="nikon-z-noct">Z Noct 58mm f/0.95 <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="optical-story story-portrait">
+          <p class="story-kicker">02 / NIKKOR · DESIGN LINEAGE</p><div class="story-number" aria-hidden="true">105<span>mm</span><i>3群5枚 → 4群5枚</i></div>
+          <h3>名前は同じ。設計は進む。</h3><p class="story-copy">初代10.5cmのゾナー型から、後のAiに続くクセノター型へ。同じ105mm f/2.5の中に、解像とボケを探った設計史がある。</p>
+          <div class="story-links"><button type="button" data-optic-id="nikon-p-105">NIKKOR-P 10.5cm f/2.5 <span aria-hidden="true">↗</span></button><button type="button" data-optic-id="nikon-ai-105">Ai Nikkor 105mm f/2.5 <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="optical-story story-takahashi">
+          <p class="story-kicker">03 / TAKAHASHI · TWO TELESCOPES</p><div class="story-number" aria-hidden="true">130<span>mm</span><i>ε-130 / MT-130</i></div>
+          <h3>同じ口径、違う星の眺め。</h3><p class="story-copy">455mm f/3.5の旧ε-130と、800mmのニュートン式MT-130。1980年代の2台を、光学方式と焦点距離から見比べる。</p>
+          <div class="story-links"><button type="button" data-optic-id="takahashi-epsilon-130">ε-130（1984年・旧型）<span aria-hidden="true">↗</span></button><button type="button" data-optic-id="takahashi-mt-130">MT-130（1983年）<span aria-hidden="true">↗</span></button></div>
+        </article>
+      </div>
+      <p class="spotlight-footnote">各モデルの詳細から、メーカーの設計史・公表仕様へ。旧ε-130とε-130Dは別の光学系として収録しています。</p>
+    </section>
     <section id="collection" class="collection wrap" aria-labelledby="collection-title">
       <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="collection-title">光学系を探す<span id="total-count"></span></h2></div><p class="collection-note">ひとつのかたちに、ひとつの発想。</p></div>
       <div class="tools">
         <div class="filters" role="group" aria-label="光学系の分類">
-          <button class="filter active" data-category="all" aria-pressed="true">すべて <span>46</span></button>
-          <button class="filter" data-category="objective" aria-pressed="false">対物レンズ <span>7</span></button>
+          <button class="filter active" data-category="all" aria-pressed="true">すべて <span>62</span></button>
+          <button class="filter" data-category="objective" aria-pressed="false">対物レンズ <span>9</span></button>
           <button class="filter" data-category="eyepiece" aria-pressed="false">アイピース <span>13</span></button>
-          <button class="filter" data-category="camera" aria-pressed="false">カメラレンズ <span>16</span></button>
-          <button class="filter" data-category="reflector" aria-pressed="false">反射・屈折反射 <span>10</span></button>
+          <button class="filter" data-category="camera" aria-pressed="false">カメラレンズ <span>26</span></button>
+          <button class="filter" data-category="reflector" aria-pressed="false">反射・屈折反射 <span>14</span></button>
         </div>
         <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="名称・メーカーで検索" aria-label="名称・キーワードで検索" autocomplete="off"></label>
       </div>
