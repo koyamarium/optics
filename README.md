@@ -47,3 +47,8 @@ MTFは、遮蔽のない一様な円形瞳、単色、非干渉結像、無収�
 式の参考：[Edmund Optics — Introduction to MTF](https://www.edmundoptics.com/knowledge-center/application-notes/optics/introduction-to-modulation-transfer-function)
 
 実際のレンズ方式別MTFを追加する場合は、出典と測定条件を明記した測定データ、または曲率・厚み・ガラス材・間隔・絞り位置を含む光学処方が必要です。
+
+
+## Licensing / ライセンス
+
+Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photographs, book material and data are **excluded** and follow separate terms; see [LICENSING.md](LICENSING.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Public guide: https://koyamahr.github.io/rights/ .
