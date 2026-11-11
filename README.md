@@ -24,7 +24,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 ## GitHub Pages
 
-公開先は [koyamahr.github.io/optics](https://koyamahr.github.io/optics/)、リポジトリは [koyamahr/optics](https://github.com/koyamahr/optics) です。GitHub Pagesはmainブランチのルートから公開しています。
+公開先は [koyamarium.github.io/optics](https://koyamarium.github.io/optics/)、リポジトリは [koyamarium/optics](https://github.com/koyamarium/optics) です。GitHub Pagesはmainブランチのルートから公開しています。
 
 1. GitHubリポジトリに、このフォルダのファイルをpushします。
 2. Settings → Pages → Build and deployment で **Deploy from a branch** を選びます。
@@ -51,4 +51,4 @@ MTFは、遮蔽のない一様な円形瞳、単色、非干渉結像、無収�
 
 ## Licensing / ライセンス
 
-Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photographs, book material and data are **excluded** and follow separate terms; see [LICENSING.md](LICENSING.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Public guide: https://koyamahr.github.io/rights/ .
+Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photographs, book material and data are **excluded** and follow separate terms; see [LICENSING.md](LICENSING.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Public guide: https://koyamarium.github.io/rights/ .
