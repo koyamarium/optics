@@ -103,5 +103,146 @@ OPTICS.push(
   {id:'takahashi-toa-130',category:'objective',brand:'takahashi',kind:'product',name:'TOA-130',en:'Takahashi TOA-130 · Triplet Ortho Apochromat',aliases:['TOA130','TOA 130','アポクロマート','トリプレット'],diameter:'130 mm',elements:3,groups:3,focal:'1000 mm',aperture:'f/7.7',meta:'3群3枚・口径130mm',tag:'3枚を離して、色を整える',description:'完全分離の3枚玉で、軸上色収差と波長ごとの球面収差の補正を追求。',detail:'3群3枚を空気間隔で分離した屈折光学系。異常分散ガラス2枚を含むレンズの間隔を使い、軸上色収差と波長によって変わる球面収差を補正します。主焦点で口径130mm・焦点距離1000mm・f/7.7。フラットナーやレデューサーを組み合わせた撮影時の数値は、この主焦点仕様と分けて公式資料で確認できます。',source:'takatoa',related:['takahashi-fsq-106ed','apochromat']},
   {id:'takahashi-mewlon-250crs',category:'reflector',brand:'takahashi',kind:'product',name:'Mewlon-250CRS',en:'Takahashi Mewlon-250CRS · corrected Dall–Kirkham',aliases:['ミューロン','ミューロン250','Mewlon 250','CRS','ドールカーカム'],diameter:'250 mm',focal:'2500 mm',aperture:'f/10',specCaption:'CORRECTED DALL–KIRKHAM',meta:'口径250mm・補正ドール・カーカム',tag:'折り返した先で、像を整える',description:'バッフル内の3群3枚の補正レンズで、ドール・カーカム系の周辺像を改善。',detail:'口径250mm・焦点距離2500mm・f/10の補正ドール・カーカム式です。バッフル内に3群3枚、うち1枚はEDの補正レンズを配置し、コマ収差や像面湾曲を補正します。通常のドール・カーカムと、像側へ補正系を加える設計の違いを比較できます。3群3枚は補正レンズだけの値で、主鏡・副鏡を含む光学系全体の枚数ではありません。',source:'takamewlon',related:['dall-kirkham','corrected-dall-kirkham']}
 );
+// Personal gear: exact camera-lens models verified against Nikon documentation.
+Object.assign(SOURCES, {
+  "nikonzdx1650": [
+    "Nikon — NIKKOR Z DX 16–50mm f/3.5–6.3 VR：仕様・構成図・MTF",
+    "https://nij.nikon.com/products/lineup/nikkor/zmount/nikkor_z_dx_16-50mm_f35-63_vr/spec.html"
+  ],
+  "nikonzdx50250": [
+    "Nikon — NIKKOR Z DX 50–250mm f/4.5–6.3 VR：仕様・構成図・MTF",
+    "https://nij.nikon.com/products/lineup/nikkor/zmount/nikkor_z_dx_50-250mm_f45-63_vr/spec.html"
+  ],
+  "nikondxfisheye105": [
+    "Nikon — AF DX Fisheye-Nikkor 10.5mm f/2.8G ED：仕様・構成図・MTF",
+    "https://nij.nikon.com/products/lineup/nikkor/fmount/af_dx_fisheye-nikkor_105mm_f28g_ed/spec.html"
+  ],
+  "nikonzoommicro70180": [
+    "Nikon — AI AF Zoom Micro Nikkor ED 70–180mm F4.5–F5.6D：製品仕様",
+    "https://nij.nikon.com/products/lineup/nikkor/fmount/ai_af_zoom_micro_nikkor_ed_70-180mm_f45-f56d/"
+  ]
+});
+OPTICS.push(...[
+  {
+    "id": "nikon-z-dx-16-50",
+    "gearAnchor": "nikon-z-dx-16-50",
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "name": "NIKKOR Z DX 16–50mm f/3.5–6.3 VR",
+    "en": "NIKKOR Z DX 16–50mm f/3.5–6.3 VR",
+    "aliases": [
+      "16-50",
+      "1650",
+      "Z50",
+      "標準ズーム",
+      "沈胴",
+      "DX",
+      "APS-C"
+    ],
+    "elements": 9,
+    "groups": 7,
+    "focal": "16–50 mm",
+    "aperture": "f/3.5–6.3",
+    "meta": "7群9枚・ED1枚／非球面4枚",
+    "tag": "小さく収める標準ズーム",
+    "description": "DXフォーマットのZマウント用標準ズーム。EDと非球面を組み合わせた7群9枚。",
+    "detail": "16–50mm、開放f/3.5–6.3のDX用ズームです。7群9枚にEDレンズ1枚と非球面レンズ4枚を含み、インターナルフォーカスとレンズシフト式VRを採用。沈胴時の長さは約32mm、質量は約135gです。焦点距離だけでなく、複数の非球面を使った構成と携帯性の組み合わせが見どころです。実際の構成図と広角端・望遠端のMTFは、下記のニコン公式資料で確認できます。",
+    "source": "nikonzdx1650",
+    "related": [
+      "nikon-z-dx-50-250"
+    ]
+  },
+  {
+    "id": "nikon-z-dx-50-250",
+    "gearAnchor": "nikon-z-dx-50-250",
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "name": "NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
+    "en": "NIKKOR Z DX 50–250mm f/4.5–6.3 VR",
+    "aliases": [
+      "50-250",
+      "50250",
+      "Z50",
+      "望遠ズーム",
+      "DX",
+      "APS-C",
+      "月"
+    ],
+    "elements": 16,
+    "groups": 12,
+    "focal": "50–250 mm",
+    "aperture": "f/4.5–6.3",
+    "meta": "12群16枚・ED1枚",
+    "tag": "DXの画角を、望遠へ",
+    "description": "ZマウントのDX用望遠ズーム。EDレンズ1枚を含む12群16枚とレンズシフト式VR。",
+    "detail": "50–250mm、開放f/4.5–6.3のDX用望遠ズームです。12群16枚にEDレンズ1枚を含み、インターナルフォーカスとレンズシフト式VRを採用。最短撮影距離は50mm時0.5m、250mm時1.0mです。同じDX用の16–50mmと比べ、焦点距離域に加えて構成枚数や撮影距離の変化を見比べられます。実際の構成図と両ズーム端のMTFは公式資料を参照してください。",
+    "source": "nikonzdx50250",
+    "related": [
+      "nikon-z-dx-16-50"
+    ]
+  },
+  {
+    "id": "nikon-dx-fisheye-10-5",
+    "gearAnchor": "nikon-dx-fisheye-10-5",
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "name": "AF DX Fisheye-Nikkor 10.5mm f/2.8G ED",
+    "en": "AF DX Fisheye-Nikkor 10.5mm f/2.8G ED",
+    "aliases": [
+      "10.5",
+      "105",
+      "魚眼",
+      "フィッシュアイ",
+      "Fisheye",
+      "等立体角",
+      "DX"
+    ],
+    "elements": 10,
+    "groups": 7,
+    "focal": "10.5 mm",
+    "aperture": "f/2.8",
+    "meta": "7群10枚・DX対角180°",
+    "tag": "広角とは違う、魚眼の写し方",
+    "description": "等立体角射影を使うDX用対角線魚眼。EDガラス1枚を含む7群10枚。",
+    "detail": "FマウントのDX用魚眼レンズです。7群10枚、EDガラス1枚、開放f/2.8。DXフォーマットで対角180°の画角を持ち、等立体角射影方式を採用しています。通常の広角レンズと、画角を像面へ写す規則の違いに注目できます。最短撮影距離は0.14m、最大撮影倍率は0.2倍。構成図とMTFは下記の公式仕様で確認できます。",
+    "source": "nikondxfisheye105",
+    "related": [
+      "distagon"
+    ]
+  },
+  {
+    "id": "nikon-zoom-micro-70-180",
+    "gearAnchor": "nikon-zoom-micro-70-180",
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "name": "AI AF Zoom Micro Nikkor ED 70–180mm F4.5–F5.6D",
+    "en": "AF Zoom-Micro Nikkor 70–180mm f/4.5–5.6D ED",
+    "aliases": [
+      "70-180",
+      "70180",
+      "ズームマイクロ",
+      "ズームマクロ",
+      "接写",
+      "Micro"
+    ],
+    "elements": 18,
+    "groups": 14,
+    "focal": "70–180 mm",
+    "aperture": "f/4.5–5.6",
+    "meta": "14群18枚・ED1枚",
+    "tag": "距離を保って、倍率を変える",
+    "description": "接写とズームを組み合わせたFマウントのマイクロレンズ。14群18枚で全域0.37mまで接近。",
+    "detail": "14群18枚、EDレンズ1枚のAFズームマイクロです。ズーム全域で最短撮影距離は約0.37m。最大撮影倍率は70mm時1/3.2倍、180mm時約1/1.32倍で、等倍レンズとは区別します。被写体との距離を保ちながらズームで倍率を変えられる点が見どころです。レンズの設計意図はニコンの<a href=\"https://nij.nikon.com/enjoy/life/historynikkor/0018/\" target=\"_blank\" rel=\"noopener noreferrer\">千夜一夜物語・第十八夜</a>でも紹介されています。",
+    "source": "nikonzoommicro70180",
+    "related": [
+      "nikon-micro-55",
+      "nikon-z-mc105"
+    ]
+  }
+]);
 const categoryOrder=['objective','eyepiece','camera','reflector'];
 OPTICS.sort((a,b)=>categoryOrder.indexOf(a.category)-categoryOrder.indexOf(b.category));
