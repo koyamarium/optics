@@ -57,4 +57,4 @@ Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photo
 
 MT-130・旧ε-130、およびZ DX 16–50mm・50–250mm、DX魚眼10.5mm、ズームマイクロ70–180mmの詳細に、作者の[愛機リスト](https://koyamarium.github.io/gear/)の該当項目へのリンクを表示します。`catalog.js` の `gearAnchor` が対応する機材の項目IDです。愛機リストからは既存の `#system=<id>` で図鑑の詳細を開けます。ε-130Dや焦点距離の異なるレンズなど、同一機種と確認できない項目は対応付けていません。
 
-Reflex-Nikkor 500mm F8は旧型とNew型を別製品として収録。愛機の所有世代は未同定のため、両方から同じ愛機項目へ比較用リンクを置き、`gearNote` で未確認である旨を明記しています。
+Reflex-Nikkor 500mm F8は旧型とNew型を別製品として収録。本人が所有していたのはNew型と確認済みのため、愛機との相互リンクはNew型だけに付けています。旧型は比較用として図鑑内で関連付けています。

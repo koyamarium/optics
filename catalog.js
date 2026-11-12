@@ -244,7 +244,7 @@ OPTICS.push(...[
     ]
   }
 ]);
-// Reflex generations are separate; personal ownership generation remains unconfirmed.
+// Reflex generations are separate; the personal gear is the New version.
 Object.assign(SOURCES, {"nikonreflex500": ["Nikon — ニッコール千夜一夜物語 第十三夜：〈New〉Reflex-Nikkor 500mm F8", "https://nij.nikon.com/enjoy/life/historynikkor/0013/"]});
 OPTICS.push(...[
   {
@@ -255,8 +255,6 @@ OPTICS.push(...[
     "aperture": "f/8",
     "specCaption": "CATADIOPTRIC PHOTO LENS",
     "source": "nikonreflex500",
-    "gearAnchor": "nikon-reflex-500",
-    "gearNote": "愛機の所有世代は確認中です。旧型とNew型を比較するためのリンクです。",
     "id": "nikon-reflex-500-old",
     "name": "Reflex-Nikkor 500mm F8（旧型）",
     "en": "Reflex-Nikkor 500mm F8 · original generation · 1969",
@@ -284,7 +282,6 @@ OPTICS.push(...[
     "specCaption": "CATADIOPTRIC PHOTO LENS",
     "source": "nikonreflex500",
     "gearAnchor": "nikon-reflex-500",
-    "gearNote": "愛機の所有世代は確認中です。旧型とNew型を比較するためのリンクです。",
     "id": "nikon-reflex-500-new",
     "name": "〈New〉Reflex-Nikkor 500mm F8",
     "en": "New Reflex-Nikkor 500mm F8 · 1984",
