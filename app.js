@@ -76,6 +76,7 @@ function openDetail(id) {
   history.replaceState(null,'',`#system=${o.id}`);
 }
 function closeDetail(){dialog.close();history.replaceState(null,'','#collection');}
+window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#system='))openDetail(location.hash.slice(8));});
 document.querySelector('.filters').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b){category=b.dataset.category;render();}});
 $('search').addEventListener('input',e=>{query=e.target.value.trim();render();});
 $('reset').addEventListener('click',()=>{category='all';brand='all';query='';$('search').value='';$('brand-filter').value='all';render();});
