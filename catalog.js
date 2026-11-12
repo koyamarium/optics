@@ -304,5 +304,40 @@ OPTICS.push(...[
     ]
   }
 ]);
+// Personal Micro-Nikkor generation confirmed by the owner.
+Object.assign(SOURCES, {"nikonmicro60d": ["Nikon — AI AF Micro-Nikkor 60mm f/2.8D：仕様・構成図・MTF", "https://nij.nikon.com/products/lineup/nikkor/fmount/ai_af_micro-nikkor_60mm_f28d/spec.html"]});
+OPTICS.push({
+  "id": "nikon-micro-60-d",
+  "gearAnchor": "nikon-micro-60-d",
+  "category": "camera",
+  "brand": "nikon",
+  "kind": "product",
+  "name": "AI AF Micro-Nikkor 60mm f/2.8D",
+  "en": "AI AF Micro-Nikkor 60mm f/2.8D · F mount",
+  "aliases": [
+    "マイクロ",
+    "マクロ",
+    "Micro",
+    "60mm",
+    "60D",
+    "Dタイプ",
+    "等倍",
+    "接写"
+  ],
+  "elements": 8,
+  "groups": 7,
+  "focal": "60 mm",
+  "aperture": "f/2.8",
+  "meta": "7群8枚・等倍・最短0.219m",
+  "tag": "60mmで、等倍まで近づく",
+  "description": "FマウントのDタイプ・マイクロレンズ。7群8枚で、無限遠から等倍までをカバー。",
+  "detail": "AI AF Micro-Nikkor 60mm f/2.8Dの公表仕様です。7群8枚、最短撮影距離0.219m、最大撮影倍率1.00倍。35mm判・FXに対応し、DXでの画角は35mm判の90mm相当に当たります。撮影距離情報をカメラへ伝えるDタイプで、AF-S 60mm f/2.8G EDとは別のモデルです。表示のf/2.8は無限遠時の開放値で、近接撮影では有効F値が大きくなります。実際の構成図とMTFは公式資料で確認できます。",
+  "source": "nikonmicro60d",
+  "related": [
+    "nikon-micro-55",
+    "nikon-zoom-micro-70-180",
+    "nikon-z-mc105"
+  ]
+});
 const categoryOrder=['objective','eyepiece','camera','reflector'];
 OPTICS.sort((a,b)=>categoryOrder.indexOf(a.category)-categoryOrder.indexOf(b.category));
