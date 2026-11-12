@@ -52,3 +52,7 @@ MTFは、遮蔽のない一様な円形瞳、単色、非干渉結像、無収�
 ## Licensing / ライセンス
 
 Original implementation code: **MIT** ([LICENSE](LICENSE)). Text, figures, photographs, book material and data are **excluded** and follow separate terms; see [LICENSING.md](LICENSING.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Public guide: https://koyamarium.github.io/rights/ .
+
+## 愛機リストとの相互リンク
+
+MT-130と旧ε-130の詳細に、作者の[愛機リスト](https://koyamarium.github.io/gear/)の該当項目へのリンクを表示します。`catalog.js` の `gearAnchor` が対応する機材の項目IDです。愛機リストからは既存の `#system=<id>` で図鑑の詳細を開けます。ε-130Dや焦点距離の異なるレンズなど、同一機種と確認できない項目は対応付けていません。

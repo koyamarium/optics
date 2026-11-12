@@ -68,6 +68,7 @@ function openDetail(id) {
   const source=SOURCES[o.source];
   const related=(o.related||[]).map(id=>OPTICS.find(item=>item.id===id)).filter(Boolean);
   $('detail-content').innerHTML=`<p class="eyebrow">${CATEGORIES[o.category]} / ${o.kind==='product'?'実製品の公表仕様':'方式・設計例'}${o.brand?` / ${BRANDS[o.brand]}`:''}</p><h2 id="detail-title" class="detail-title">${o.name}</h2><p class="detail-en">${escapeHTML(o.en)}</p><div class="detail-art">${diagram(o)}</div><div class="detail-tags"><span>${o.meta}</span><span>${o.tag}</span></div><p class="detail-description">${o.detail}</p><p class="detail-notice">${o.kind==='product'?'このカードは特定モデルの公表仕様を表示しています。内部構成図や性能資料は下記の資料を参照してください。':'図は代表構成の模式例です。曲率・間隔・光路は数値計算や実機の処方に基づいていません。'}</p><a class="source-link" href="${source[1]}" target="_blank" rel="noopener noreferrer">参考資料：${source[0]} ↗</a>`;
+  if(o.gearAnchor)$('detail-content').innerHTML+=`<aside class="personal-gear"><p class="eyebrow">これまで使ってきた道具</p><a class="personal-gear-link" href="https://koyamarium.github.io/gear/?lang=ja#${escapeHTML(o.gearAnchor)}">小山 洋の愛機リストで見る <span aria-hidden="true">↗</span></a></aside>`;
   if(related.length)$('detail-content').innerHTML+=`<nav class="related-optics" aria-label="関連する光学系"><p class="eyebrow">あわせて巡る</p>${related.map(item=>`<button type="button" data-optic-id="${item.id}">${escapeHTML(item.name)} <span aria-hidden="true">→</span></button>`).join('')}</nav>`;
   if(!dialog.open)dialog.showModal();
   dialog.scrollTop=0;
