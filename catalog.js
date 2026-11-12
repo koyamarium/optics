@@ -339,5 +339,40 @@ OPTICS.push({
     "nikon-z-mc105"
   ]
 });
+// Original DX 18–200mm confirmed by owner.
+Object.assign(SOURCES, {"nikondxvr18200": ["Nikon — ニッコール千夜一夜物語 第八十二夜：AF-S DX VR Zoom-Nikkor ED 18–200mm f/3.5–5.6G（IF）", "https://nij.nikon.com/enjoy/life/historynikkor/0082/"]});
+OPTICS.push({
+  "id": "nikon-dx-vr-18-200-original",
+  "gearAnchor": "nikon-dx-vr-18-200-original",
+  "category": "camera",
+  "brand": "nikon",
+  "kind": "product",
+  "name": "AF-S DX VR Zoom-Nikkor ED 18–200mm f/3.5–5.6G（IF）",
+  "en": "AF-S DX VR Zoom-Nikkor 18–200mm f/3.5–5.6G IF-ED · original model · 2005",
+  "aliases": [
+    "18-200",
+    "18200",
+    "高倍率ズーム",
+    "初代",
+    "VR",
+    "DX",
+    "AF-S",
+    "IF-ED"
+  ],
+  "elements": 16,
+  "groups": 12,
+  "focal": "18–200 mm",
+  "aperture": "f/3.5–5.6",
+  "meta": "12群16枚・ED2枚／非球面3枚",
+  "tag": "広角から望遠まで、一本で",
+  "description": "2005年発売の初代18–200mm。約11.1倍ズームにIF・SWM・手ブレ補正を組み合わせる。",
+  "detail": "2005年発売の初代18–200mmです。12群16枚にED2枚・非球面3枚を含み、全域で最短撮影距離0.5m、質量約560g。千夜一夜の「4群ズーム」はズーム動作を担う群の区分で、接合・空気間隔で数える12群とは別の数え方です。記事では第3群後部をシフトさせるVRの工夫も紹介されています。後継のVR IIモデルとは区別します。数値は<a href=\"https://nij.nikon.com/cms/support/manual/nikkor/AFSDXVR18-200G_06.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">公式使用説明書（PDF）</a>も参照してください。",
+  "source": "nikondxvr18200",
+  "related": [
+    "nikon-z-dx-16-50",
+    "nikon-z-dx-50-250",
+    "nikon-zoom-micro-70-180"
+  ]
+});
 const categoryOrder=['objective','eyepiece','camera','reflector'];
 OPTICS.sort((a,b)=>categoryOrder.indexOf(a.category)-categoryOrder.indexOf(b.category));
