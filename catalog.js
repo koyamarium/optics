@@ -244,5 +244,68 @@ OPTICS.push(...[
     ]
   }
 ]);
+// Reflex generations are separate; personal ownership generation remains unconfirmed.
+Object.assign(SOURCES, {"nikonreflex500": ["Nikon — ニッコール千夜一夜物語 第十三夜：〈New〉Reflex-Nikkor 500mm F8", "https://nij.nikon.com/enjoy/life/historynikkor/0013/"]});
+OPTICS.push(...[
+  {
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "focal": "500 mm",
+    "aperture": "f/8",
+    "specCaption": "CATADIOPTRIC PHOTO LENS",
+    "source": "nikonreflex500",
+    "gearAnchor": "nikon-reflex-500",
+    "gearNote": "愛機の所有世代は確認中です。旧型とNew型を比較するためのリンクです。",
+    "id": "nikon-reflex-500-old",
+    "name": "Reflex-Nikkor 500mm F8（旧型）",
+    "en": "Reflex-Nikkor 500mm F8 · original generation · 1969",
+    "aliases": [
+      "レフレックス",
+      "反射レンズ",
+      "500mm",
+      "旧型",
+      "ミラーレンズ"
+    ],
+    "meta": "1969年登場・最短4m・1,000g",
+    "tag": "500mmを、折り返して収める",
+    "description": "鏡を用いる撮影用500mm。New型とは分け、旧型の公表仕様を収録。",
+    "detail": "ニコンの第十三夜で比較されている旧型500mm F8です。最短撮影距離4m、質量1,000g。1984年のNew型は最短1.5m・840gとなり、小型化と近接撮影の違いを比較できます。記事中の断面図・詳しい設計解説はNew型のものです。",
+    "related": [
+      "nikon-reflex-500-new"
+    ]
+  },
+  {
+    "category": "camera",
+    "brand": "nikon",
+    "kind": "product",
+    "focal": "500 mm",
+    "aperture": "f/8",
+    "specCaption": "CATADIOPTRIC PHOTO LENS",
+    "source": "nikonreflex500",
+    "gearAnchor": "nikon-reflex-500",
+    "gearNote": "愛機の所有世代は確認中です。旧型とNew型を比較するためのリンクです。",
+    "id": "nikon-reflex-500-new",
+    "name": "〈New〉Reflex-Nikkor 500mm F8",
+    "en": "New Reflex-Nikkor 500mm F8 · 1984",
+    "aliases": [
+      "レフレックス",
+      "反射レンズ",
+      "500mm",
+      "New",
+      "ミラーレンズ",
+      "リングボケ",
+      "綱嶋輝義"
+    ],
+    "meta": "1984年登場・最短1.5m・840g",
+    "tag": "鏡とレンズで、望遠を小さく",
+    "description": "鏡と屈折レンズを組み合わせた500mm。旧型から近接撮影と携帯性を改善。",
+    "detail": "主鏡と副鏡で光を折り返し、主鏡の中央孔内に屈折レンズ群を収める設計です。最短撮影距離1.5m、質量840g。中央遮蔽に由来するリング状のボケも特徴です。公式記事には綱嶋輝義による設計の背景と断面図があり、天体望遠鏡につながる撮影レンズとして読めます。",
+    "related": [
+      "nikon-reflex-500-old",
+      "classical-cassegrain"
+    ]
+  }
+]);
 const categoryOrder=['objective','eyepiece','camera','reflector'];
 OPTICS.sort((a,b)=>categoryOrder.indexOf(a.category)-categoryOrder.indexOf(b.category));
